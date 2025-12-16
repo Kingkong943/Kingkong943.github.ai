@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags - Helps Google find you -->
+    <meta name="description" content="Free Grade 10 Cambridge study resources, past papers, and practice questions. Created by Cyusa Malick in Rwanda for Mathematics, Science, Geography, History, English, ICT students.">
+    <meta name="keywords" content="Grade 10 Cambridge, Rwanda, study notes, past papers, Mathematics, Science, Geography, Cyusa Malick, free education">
+    <meta name="author" content="Cyusa Malick">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Social Media Tags -->
+    <meta property="og:title" content="StudyBuddy - Free Grade 10 Cambridge Resources">
+    <meta property="og:description" content="Free educational platform for Grade 10 Cambridge students in Rwanda. Created by Cyusa Malick.">
+    <meta property="og:image" content="https://img.icons8.com/color/96/000000/books.png">
+    <meta property="og:url" content="https://YOURUSERNAME.github.io">
+    
+    <title>StudyBuddy - Free Grade 10 Cambridge Resources</title>
+    
+    <style>
+        /* ====== ROOT VARIABLES ====== */
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --accent: #e74c3c;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        /* ====== RESET & BASE STYLES ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* ====== HEADER & NAVIGATION ====== */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 1rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-weight: 600;
+        }
+
+        nav a:hover, nav a.active {
+            background: rgba(255,255,255,0.2);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ====== MAIN CONTENT ====== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ====== HERO SECTION ====== */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: var(--radius);
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .hero h2 {
+            color: var(--primary);
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .creator-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin: 1rem 0;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary), #27ae60);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+        }
+
+        /* ====== STATS SECTION ====== */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ====== SUBJECTS SECTION ====== */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 4rem;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .subject-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .subject-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* ====== RESOURCES SECTION ====== */
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary);
+            transition: var(--transition);
+        }
+
+        .resource-card:hover {
+            transform: translateX(5px);
+        }
+
+        .resource-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .download-btn:hover {
+            background: #2980b9;
+        }
+
+        /* ====== CONTACT SECTION ====== */
+        .contact-section {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius);
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .creator-profile {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .creator-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .contact-btn {
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .email-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ====== RESPONSIVE DESIGN ====== */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resource-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .creator-badge {
+                font-size: 0.9rem;
+                padding: 6px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/250796823426" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        💬
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <h1>StudyBuddy</h1>
+            </div>
+            <p class="tagline">Free Grade 10 Cambridge Resources | Created in Rwanda</p>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#practice">Practice</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h2>Welcome to StudyBuddy!</h2>
+            <p>Your free online platform for Grade 10 Cambridge curriculum resources, study materials, past papers, and practice questions.</p>
+            
+            <div class="creator-badge">
+                👨‍💻 Created by Cyusa Malick • 16-year-old student • Rwanda 🇷🇼
+            </div>
+            
+            <p>Join hundreds of students who are improving their grades with our free resources. No payments, no subscriptions - just quality education for all.</p>
+            
+            <a href="#subjects" class="cta-button">Start Learning Now →</a>
+        </section>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div>Free Resources</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8+</div>
+                <div>Subjects Covered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div>Accessible</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">🌍</div>
+                <div>Rwanda Focused</div>
+            </div>
+        </div>
+
+        <!-- Subjects Section -->
+        <section id="subjects">
+            <h2 class="section-title">Our Subjects</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <span class="subject-icon">🧮</span>
+                    <h3>Mathematics</h3>
+                    <p>Algebra, Geometry, Statistics, Calculus</p>
+                </div>
+                <div class="subject-card">
+                    <span class="subject-icon">🔬</span>
+                    <h3>Science</h3>
+                    <p>Biology, Chemistry, Physics, Environmental</p>
+                </div>
+                <div class="subject-card">
+                    <span class="subject-icon">🌍</span>
+                    <h3>Geography</h3>
+                    <p>Physical & Human Geography</p>
+                </div>
+                <div class="subject-card">
+                    <span class="subject-icon">📜</span>
+                    <h3>History</h3>
+                    <p>World History & Regional Studies</p>
+                </div>
+                <div class="subject-card">
+                    <span class="subject-icon">🔤</span>
+                    <h3>English</h3>
+                    <p>Language & Literature</p>
+                </div>
+                <div class="subject-card">
+                    <span class="subject-icon">💻</span>
+                    <h3>ICT</h3>
+                    <p>Information & Communication Technology</p>
+                </div>
+                <div class="subject-card">
+                    <span class="subject-icon">🇫🇷</span>
+                    <h3>French</h3>
+                    <p>Language & Literature</p>
+                </div>
+                <div class="subject-card">
+                    <span class="subject-icon">💼</span>
+                    <h3>Business</h3>
+                    <p>Commerce & Entrepreneurship</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2 class="section-title">Free Resources</h2>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <h3>📘 Study Notes</h3>
+                    <p>Comprehensive notes organized by topic and chapter for all subjects. Updated regularly with Cambridge syllabus changes.</p>
+                    <a href="#" class="download-btn">Download Samples</a>
+                </div>
+                <div class="resource-card">
+                    <h3>📝 Past Papers</h3>
+                    <p>Previous exam papers (2018-2023) with official marking schemes. Includes step-by-step solutions.</p>
+                    <a href="#" class="download-btn">View Papers</a>
+                </div>
+                <div class="resource-card">
+                    <h3>🎥 Video Lessons</h3>
+                    <p>Curated YouTube playlists explaining difficult concepts. Visual learning for better understanding.</p>
+                    <a href="#" class="download-btn">Watch Now</a>
+                </div>
+                <div class="resource-card">
+                    <h3>🧠 Revision Guides</h3>
+                    <p>Topic summaries and last-minute revision checklists. Perfect for exam preparation.</p>
+                    <a href="#" class="download-btn">Get Guides</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="practice">
+            <h2 class="section-title">Practice Questions</h2>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <h3>✅ Multiple Choice</h3>
+                    <p>Test your knowledge with interactive quizzes and instant feedback. Track your progress over time.</p>
+                </div>
+                <div class="resource-card">
+                    <h3>✍️ Essay Writing</h3>
+                    <p>Guidance and examples for English and History essay questions. Learn how to structure your answers.</p>
+                </div>
+                <div class="resource-card">
+                    <h3>🔢 Problem Solving</h3>
+                    <p>Step-by-step solutions to Mathematics and Science problems. Learn the methodology, not just the answer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contact the Creator</h2>
+            
+            <div class="creator-profile">
+                <div class="creator-avatar">CM</div>
+                <h3>Cyusa Malick</h3>
+                <p>16-year-old student & founder of StudyBuddy</p>
+                <p>📍 Kigali, Rwanda</p>
+                <p>"I created StudyBuddy to help fellow students access free quality education. Your success is my motivation!"</p>
+            </div>
+
+            <div class="contact-buttons">
+                <a href="https://wa.me/250796823426" class="contact-btn whatsapp-btn" target="_blank">
+                    <span>📱</span> WhatsApp: +250 796 823 426
+                </a>
+                <a href="mailto:studybuddy.rw@gmail.com" class="contact-btn email-btn">
+                    <span>📧</span> Email: studybuddy.rw@gmail.com
+                </a>
+            </div>
+
+            <p>Have suggestions, resources to share, or need help? Don't hesitate to reach out!</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>StudyBuddy - Free Education for All</h3>
+            <p>Grade 10 Cambridge Resources | Made with ❤️ in Rwanda</p>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#subjects">Subjects</a>
+                <a href="#resources">Resources</a>
+                <a href="#practice">Practice</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 StudyBuddy. Created by Cyusa Malick. All resources are free for educational use.</p>
+                <p>This website is hosted for free on GitHub Pages.</p>
+                <p>Rwanda 🇷🇼 • Education for Everyone</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Smooth Scrolling -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Simple page visit counter (using localStorage)
+        window.addEventListener('load', function() {
+            if(localStorage.getItem('visitCount')) {
+                let count = parseInt(localStorage.getItem('visitCount')) + 1;
+                localStorage.setItem('visitCount', count);
+            } else {
+                localStorage.setItem('visitCount', 1);
+            }
+            console.log(`StudyBuddy has been visited ${localStorage.getItem('visitCount')} times!`);
+        });
+    </script>
+</body>
+</html>
